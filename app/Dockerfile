@@ -1,6 +1,6 @@
 FROM python:3.9
 
-COPY app/
-COPY requirements.txt
+COPY app app
+RUN pip3 install -r app/requirements.txt
 
-CMD ["python3", "main.py"]
+CMD ["python", "app/main.py"]
