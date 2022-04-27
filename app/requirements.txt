@@ -6,6 +6,7 @@ h11==0.13.0
 idna==3.3
 pydantic==1.9.0
 sniffio==1.2.0
+SQLAlchemy==1.4.36
 starlette==0.17.1
 typing_extensions==4.2.0
 uvicorn==0.17.6
