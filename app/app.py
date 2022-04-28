@@ -22,11 +22,18 @@ async def read_root() -> dict:
     return {"message": "Welcome to the FastAPI Dockerized app!"}
 
 
-@app.get('/human/{human_id}', tags=["human"] )
-async def get_human(human_id) -> dict:
-    return {"message": "This is your human"}
+@app.get('/human/', tags=["human"], response_model=schemas.Human)
+async def get_human(human_id: int, db: Session = Depends(get_db)):
+    your_human = db.query(models.Human).filter(models.Human.id == human_id).one()
+
+    return your_human
 
 
-@app.post('/human/{human_id}', tags=["human"] )
-async def make_human(human_id) -> dict:
-    return {"message": "This is your human"}
+@app.post('/human/', tags=["human"], response_model=schemas.Human)
+async def make_human(human: schemas.Human, db: Session = Depends(get_db)):
+    db_human = models.Human(**human.dict())
+    db.add(db_human)
+    db.commit()
+    db.refresh(db_human)
+
+    return db_human
