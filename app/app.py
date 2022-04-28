@@ -1,7 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from pydantic import BaseModel
+from sqlalchemy.orm import Session
 
-import models
+import models, schemas
 from database import SessionLocal, engine
 
 models.Base.metadata.create_all(bind=engine)
