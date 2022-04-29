@@ -1,6 +1,8 @@
 # dockerized-fast-api-db
 A small repo to test hosting a FastAPI API, connected to a database, both running in Docker containers.
 
+## To run the app go to: http://3.25.173.58/ !
+
 # Docs:
 - https://docs.docker.com/compose/compose-file/ (compose)
 - https://docs.docker.com/storage/volumes/ (database)
