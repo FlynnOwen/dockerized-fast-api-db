@@ -15,3 +15,4 @@ Volumes show where in the Docker container data should be mounted. For example, 
 
 # AWS Deploy
 - https://levelup.gitconnected.com/deploy-a-dockerized-fastapi-application-to-aws-cc757830ba1b
+- https://www.cyberciti.biz/faq/how-to-install-docker-on-amazon-linux-2/
